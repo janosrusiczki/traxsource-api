@@ -1,6 +1,7 @@
 module Traxsource
   require 'open-uri'
   module Parser
+    extend self
     def title(title_id)
       doc = nokogiri_doc('title', title_id)
       full_title = doc.css("meta[property='og:title']").first.attributes['content'].value
