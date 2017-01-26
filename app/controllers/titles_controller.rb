@@ -1,5 +1,5 @@
 class TitlesController < ApplicationController
-  include Traxsource::Parser
+  include Traxsource
   def index
 
   end
@@ -7,7 +7,7 @@ class TitlesController < ApplicationController
   def show
     respond_to do |format|
       format.json {
-        render json: Traxsource::Parser.title(params['id'])
+        render json: Traxsource.title(params['id'])
       }
     end
   end

@@ -1,13 +1,37 @@
 module Traxsource
-  require 'open-uri'
-  module Parser
-    extend self
-    def title(title_id)
-      doc = nokogiri_doc('title', title_id)
-      full_title = doc.css("meta[property='og:title']").first.attributes['content'].value
-      title = doc.css("span.title").first.text
+  # encapsulation ftw
+  class TitleParser
+    def initialize(title_id)
+      @doc = Traxsource::NokogiriHelper.nokogiri_doc('title', title_id)
+      @title = Hash.new
+    end
+
+    def title
+      get_general_data
+      get_artists
+      get_tracks
+      @title
+    end
+
+    def get_general_data
+      @title[:full_title] = @doc.css("meta[property='og:title']").first.attributes['content'].value
+      @title[:title] = @doc.css("span.title").first.text
+      label_link = @doc.css('span.label a')
+      @title[:label] = {
+        name: label_link.text,
+        id: /(\d+)/.match(label_link.attribute('href').value)[1]
+      }
+      catalog_number_release_date = /([^\s\|]+)\s\|\s([^\s]+)/.match(@doc.css('div.cat-rdate').text)
+      @title[:catalog_number] = catalog_number_release_date[1]
+      @title[:release_date] = catalog_number_release_date[2]
+      @title[:price] = @doc.css('div.buy-large span.price').text
+      @title[:description] = @doc.css('div.desc').text
+      @title[:image] = @doc.css('div.t-image img').attribute('src').value
+    end
+
+    def get_artists
       artists = []
-      doc.css("span.artist a").each do |a|
+      @doc.css("span.artist a").each do |a|
         artists << {
           name: a.text,
           id: a.attribute('data-aid').value,
@@ -18,19 +42,12 @@ module Traxsource
           name: 'Various Artists'
         }
       end
-      label_link = doc.css('span.label a')
-      label = {
-        name: label_link.text,
-        id: /(\d+)/.match(label_link.attribute('href').value)[1]
-      }
-      catalog_number_release_date = /([^\s\|]+)\s\|\s([^\s]+)/.match(doc.css('div.cat-rdate').text)
-      catalog_number = catalog_number_release_date[1]
-      release_date = catalog_number_release_date[2]
-      price = doc.css('div.buy-large span.price').text
-      description = doc.css('div.desc').text
-      image = doc.css('div.t-image img').attribute('src').value
+      @title[:artists] = artists
+    end
+
+    def get_tracks
       tracks = []
-      doc.css('.play-trk').each do |t|
+      @doc.css('.play-trk').each do |t|
         version_duration = /^(.*)\s\((\d+\:\d+)\)$/.match(t.css('.version').text)
         track_artists = []
         t.css('.com-artists').each do |a|
@@ -60,18 +77,7 @@ module Traxsource
           price: t.css('.com-buy span.price').text,
         }
       end
-      {
-        full_title: full_title,
-        title: title,
-        artists: artists,
-        label: label,
-        catalog_number: catalog_number,
-        release_date: release_date,
-        price: price,
-        description: description,
-        image: image,
-        tracks: tracks,
-      }
+      @title[:tracks] = tracks
     end
 
     # provide an array of track ids
@@ -93,15 +99,11 @@ module Traxsource
       end
       tracks
     end
+  end
 
-    #private
-    def nokogiri_doc(type, id)
-      Nokogiri::HTML(open_traxsource(type, id))
-    end
-
-    def open_traxsource(type, id)
-      url = 'http://www.traxsource.com/' + type + '/' + id.to_s
-      open(url)
-    end
+  # le convenience method
+  def self.title(title_id)
+    parser = TitleParser.new(title_id)
+    parser.title
   end
 end
