@@ -5,7 +5,6 @@ class TitlesController < ApplicationController
   end
 
   def show
-    parser = Traxsource::TitleParser.new(params['id'])
-    render json: parser.title
+    render json: Traxsource.title(params['id'])
   end
 end
