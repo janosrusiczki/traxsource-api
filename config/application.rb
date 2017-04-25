@@ -29,3 +29,5 @@ module Traxsource
     config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
+
+Mongoid.load!('config/mongoid.yml')

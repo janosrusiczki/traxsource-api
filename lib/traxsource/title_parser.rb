@@ -100,10 +100,4 @@ module Traxsource
       tracks
     end
   end
-
-  # le convenience method
-  def self.title(title_id)
-    parser = TitleParser.new(title_id)
-    parser.title
-  end
 end
