@@ -1,5 +1,5 @@
 class TitlesController < ApplicationController
-  include Traxsource
+  include TraxsourceParser
 
   def index
   end
@@ -10,7 +10,7 @@ class TitlesController < ApplicationController
     if(title_model)
       title = title_model.title_hash
     else
-      title = Traxsource::TitleParser.new(traxsource_id).title
+      title = TraxsourceParser.title(traxsource_id)
       Title.create(traxsource_id: traxsource_id, title_hash: title)
     end
     render json: title

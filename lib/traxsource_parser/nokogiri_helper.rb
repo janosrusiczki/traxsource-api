@@ -1,4 +1,4 @@
-module Traxsource
+module TraxsourceParser
   module NokogiriHelper
     require 'open-uri'
     def self.nokogiri_doc(type, id)

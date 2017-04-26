@@ -1,8 +1,8 @@
-module Traxsource
+module TraxsourceParser
   # encapsulation ftw
-  class TitleParser
+  class Title
     def initialize(title_id)
-      @doc = Traxsource::NokogiriHelper.nokogiri_doc('title', title_id)
+      @doc = TraxsourceParser::NokogiriHelper.nokogiri_doc('title', title_id)
       @title = Hash.new
     end
 
