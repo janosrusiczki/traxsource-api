@@ -4,6 +4,8 @@ development:
     # Defines the default client. (required)
     default:
       uri: <%= ENV['MONGODB_URI'] %>
+  options:
+    raise_not_found_error: false
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       #database: traxsource_development
