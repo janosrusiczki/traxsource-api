@@ -89,8 +89,8 @@ GET /titles/795133
     {
       "bundle":true,
       "promo":false,
+      "title":"Boddhi Satva Top 10 (April 2017)",      
       "full_title":"Boddhi Satva Top 10 (April 2017)",
-      "title":"Boddhi Satva Top 10 (April 2017)",
       "label":{
         "name":"Top 10",
         "id":"934"
