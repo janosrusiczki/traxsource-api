@@ -6,7 +6,7 @@ module TraxsourceParser
     end
 
     def self.open_traxsource(type, id)
-      url = 'https://www.traxsource.com/' + type + '/' + id.to_s
+      url = 'https://beta.traxsource.com/' + type + '/' + id.to_s
       open(url)
     end
   end
