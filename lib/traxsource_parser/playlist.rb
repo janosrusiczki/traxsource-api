@@ -32,7 +32,7 @@ module TraxsourceParser
         track[:genre] = { id: /\/(\d+)\//.match(t['genre_url'])[1], name: t['genre'] }
         track[:catnumber] = t['catnumber']
         track[:promo] = t['promo']
-        track[:release_date] = t['rdate']
+        track[:release_date] = t['r_date']
         track[:price] = t['price']
         track[:preorder] = t['preorder']
         track[:image_full] = t['image']
