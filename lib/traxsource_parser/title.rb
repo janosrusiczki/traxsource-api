@@ -28,9 +28,9 @@ module TraxsourceParser
       else
         @title[:promo] = (@doc.at_css('.ttl-block img.promo')) ? true : false;
       end
-      @title[:title] = @doc.css("span.title").first.text
+      @title[:title] = @doc.css(".page-head h1.title").text
       @title[:full_title] = @doc.css("meta[property='og:title']").first.attributes['content'].value
-      label_link = @doc.css('h1.page a.com-label')
+      label_link = @doc.css('.page-head a.com-label')
       @title[:label] = {
         name: label_link.text,
         id: /(\d+)/.match(label_link.attribute('href').value)[1]
@@ -40,7 +40,7 @@ module TraxsourceParser
       @title[:release_date] = catalog_number_release_date[2]
       @title[:price] = @doc.css('.btns a.com-buy span.price').text[1..-1]
       @title[:description] = @doc.css('div.desc').text
-      @title[:image] = @doc.css('div.t-image img').attribute('src').value
+      @title[:image_full] = @doc.css('div.t-image img').attribute('src').value
     end
 
     def get_artists
