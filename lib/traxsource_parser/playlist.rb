@@ -30,7 +30,7 @@ module TraxsourceParser
         track[:remixers] = remixers
         track[:label] = { id: t['label'][0], name: t['label'][1] }
         track[:genre] = { id: /\/(\d+)\//.match(t['genre_url'])[1], name: t['genre'] }
-        track[:catnumber] = t['catnumber']
+        track[:catalog_number] = t['catnumber']
         track[:promo] = t['promo']
         track[:release_date] = t['r_date']
         track[:price] = t['price']

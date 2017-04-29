@@ -24,7 +24,7 @@ GET /titles/785306
       "release_date":"2017-05-05",
       "price":"5.99",
       "description":"",
-      "image":"https://geo-static.traxsource.com/files/images/745511_large.jpg",
+      "image_full":"https://geo-static.traxsource.com/files/images/745511_large.jpg",
       "artists":[
         {
           "name":"Vena",
@@ -62,7 +62,7 @@ GET /titles/785306
             "id":"24",
             "name":"Soulful House"
           },
-          "catnumber":"RNC050",
+          "catalog_number":"RNC050",
           "promo":true,
           "release_date":"2017-05-05",
           "price":{
@@ -107,7 +107,7 @@ GET /titles/785306
             "id":"24",
             "name":"Soulful House"
           },
-          "catnumber":"RNC050",
+          "catalog_number":"RNC050",
           "promo":true,
           "release_date":"2017-05-05",
           "price":{
@@ -143,7 +143,7 @@ GET /titles/795133
       "release_date":"2017-04-25",
       "price":"20.90",
       "description":"",
-      "image":"https://geo-static.traxsource.com/files/images/b795133_large.jpg",
+      "image_full":"https://geo-static.traxsource.com/files/images/b795133_large.jpg",
       "artists":[
         {
           "name":"Boddhi Satva",
@@ -182,7 +182,7 @@ GET /titles/795133
             "id":"27",
             "name":"Afro House"
           },
-          "catnumber":"OR093",
+          "catalog_number":"OR093",
           "promo":false,
           "release_date":"2017-04-21",
           "price":{
@@ -228,7 +228,7 @@ GET /titles/795133
             "id":"27",
             "name":"Afro House"
           },
-          "catnumber":"OR90",
+          "catalog_number":"OR90",
           "promo":false,
           "release_date":"2017-02-10",
           "price":{
