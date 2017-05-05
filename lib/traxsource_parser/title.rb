@@ -45,7 +45,7 @@ module TraxsourceParser
 
     def get_artists
       artists = []
-      @doc.css("span.artists a").each do |a|
+      @doc.css("h1.artists a").each do |a|
         artists << {
           name: a.text,
           id: a.attribute('data-aid').value,
