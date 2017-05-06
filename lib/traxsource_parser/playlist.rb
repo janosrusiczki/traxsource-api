@@ -1,8 +1,17 @@
 module TraxsourceParser
   class Playlist
     # provide an array of track ids
-    def self.playlist(track_ids)
+    def self.playlist_tracks(track_ids)
       url = 'http://w-static.traxsource.com/scripts/playlist.php?tracks=' + track_ids.join(',')
+      process_playlist(url)
+    end
+
+    def self.playlist_titles(title_ids)
+      url = 'http://w-static.traxsource.com/scripts/playlist.php?titles=' + title_ids.join(',')
+      process_playlist(url)
+    end
+
+    def self.process_playlist(url)
       doc = Nokogiri::XML(open(url))
       dirty_json = doc.css('data').first.text
       json = dirty_json.gsub(/([a-z0-9_]+)\:\s/, '"\1": ')

@@ -69,7 +69,7 @@ module TraxsourceParser
           version: /^(.*)\s\(\d+\:/.match(t.css('.version').text)[1],
         }
       end
-      playlist_tracks = Playlist.playlist(tracks.map{ |t| t[:track_id].to_i })
+      playlist_tracks = Playlist.playlist_tracks(tracks.map{ |t| t[:track_id].to_i })
       tracks.each_with_index do |t,i|
         t.merge! playlist_tracks[i]
       end
