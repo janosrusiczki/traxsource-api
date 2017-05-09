@@ -1,10 +1,10 @@
 ## Setup
 
-There's no configuration, it is deployable to [Heroku](https://www.heroku.com/) as is, it just needs the [mLab](https://mlab.com/) addon.
+There's no configuration, this Ruby on Rails application is deployable to [Heroku](https://www.heroku.com/) as is, it just needs the [mLab](https://mlab.com/) addon.
 
 ## Response format
 
-Basically titles on Traxsource are either regular titles or bundles (which are DJ tops, hype charts and the likes).
+Titles on Traxsource are either regular titles or bundles (which are DJ tops, hype charts and the likes).
 
 ### Regular title
 
