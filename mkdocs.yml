@@ -1,0 +1,7 @@
+site_name: Traxsource API Proxy
+pages:
+- Home: 'index.md'
+- Setup: 'setup.md'
+- Titles: 'titles.md'
+theme: readthedocs
+repo_url: https://github.com/janosrusiczki/traxsource-api
