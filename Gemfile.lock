@@ -38,16 +38,21 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
     awesome_print (1.7.0)
     bson (4.2.1)
     builder (3.2.3)
     byebug (9.0.6)
     concurrent-ruby (1.0.4)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     erubis (2.7.0)
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hashdiff (0.3.7)
     i18n (0.7.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -62,6 +67,12 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    minitest-ci (3.3.0)
+      minitest (>= 5.0.6)
+    minitest-hooks (1.4.2)
+    minitest-rails (3.0.0)
+      minitest (~> 5.8)
+      railties (~> 5.0)
     mongo (2.4.1)
       bson (>= 4.2.1, < 5.0.0)
     mongoid (6.1.0)
@@ -70,6 +81,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    public_suffix (3.0.0)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -101,6 +113,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    safe_yaml (1.0.4)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -117,6 +130,11 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    vcr (3.0.3)
+    webmock (3.1.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -128,11 +146,16 @@ DEPENDENCIES
   awesome_print
   byebug
   listen (~> 3.0.5)
+  minitest-ci
+  minitest-hooks
+  minitest-rails
   mongoid
   puma (~> 3.0)
   rails (~> 5.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)
+  vcr
+  webmock
 
 BUNDLED WITH
-   1.11.2
+   1.15.4

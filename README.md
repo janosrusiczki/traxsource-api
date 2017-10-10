@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/traxsource-api/badge/?version=latest)](http://traxsource-api.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/traxsource-api/badge/?version=latest)](http://traxsource-api.readthedocs.io/en/latest/?badge=latest) [![CircleCI](https://circleci.com/gh/janosrusiczki/traxsource-api.svg?style=svg)](https://circleci.com/gh/janosrusiczki/traxsource-api)
 
 # Traxsource API proxy
 
