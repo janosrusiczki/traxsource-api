@@ -69,6 +69,7 @@ GEM
     minitest (5.10.1)
     minitest-ci (3.3.0)
       minitest (>= 5.0.6)
+    minitest-hooks (1.4.2)
     minitest-rails (3.0.0)
       minitest (~> 5.8)
       railties (~> 5.0)
@@ -146,6 +147,7 @@ DEPENDENCIES
   byebug
   listen (~> 3.0.5)
   minitest-ci
+  minitest-hooks
   minitest-rails
   mongoid
   puma (~> 3.0)

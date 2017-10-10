@@ -2,16 +2,18 @@ require 'test_helper'
 require 'lib/traxsource_parser/shared/title_assertions'
 
 describe TraxsourceParser::Title do
-  before do
+  include Minitest::Hooks
+
+  before(:all) do
     VCR.insert_cassette 'traxsource_parser_title', record: :new_episodes
   end
 
-  after do
+  after(:all) do
     VCR.eject_cassette
   end
 
   describe "regular title" do
-    before do
+    before(:all) do
       @tp = TraxsourceParser::Title.new(785306)
       @title = @tp.title
     end
@@ -24,8 +26,8 @@ describe TraxsourceParser::Title do
   end
 
   describe "bundle" do
-    before do
-      @tp ||= TraxsourceParser::Title.new(795133)
+    before(:all) do
+      @tp = TraxsourceParser::Title.new(795133)
       @title = @tp.title
     end
 
