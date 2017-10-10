@@ -7,6 +7,7 @@ module TraxsourceParser
 
     def self.open_traxsource(type, id = nil)
       url = (type == 'home') ? 'https://www.traxsource.com/' : 'https://www.traxsource.com/' + type + '/' + id.to_s
+      Rails.logger.info "Opening " + url
       open(url)
     end
   end
