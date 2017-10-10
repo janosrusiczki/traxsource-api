@@ -5,6 +5,10 @@ require "minitest/rails"
 require "webmock/minitest"
 require 'vcr'
 
+if ENV['CIRCLECI']
+  require 'minitest/ci'
+end
+
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
 # require "minitest/rails/capybara"
