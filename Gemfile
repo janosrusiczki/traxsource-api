@@ -29,6 +29,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'awesome_print'
   gem 'minitest-rails'
+  gem 'minitest-ci'
   gem 'webmock'
   gem 'vcr'
 end
