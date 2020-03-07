@@ -21,7 +21,7 @@ describe TraxsourceParser::Title do
     include TitleAssertions
 
     it "must not be a bundle" do
-      @title[:bundle].must_equal false
+      _(@title[:bundle]).must_equal false
     end
   end
 
@@ -34,7 +34,7 @@ describe TraxsourceParser::Title do
     include TitleAssertions
 
     it "must be a bundle" do
-      @title[:bundle].must_equal true
+      _(@title[:bundle]).must_equal true
     end
   end
 end

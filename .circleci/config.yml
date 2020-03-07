@@ -2,7 +2,7 @@ version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     docker: # run the steps with Docker
-      - image: circleci/ruby:2.4.2-jessie-node # ...with this image as the primary container; this is where all `steps` will run
+      - image: circleci/ruby:2.7.0 # ...with this image as the primary container; this is where all `steps` will run
         environment: # environment variables for primary container
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -25,7 +25,9 @@ jobs: # a collection of steps
 
       - run: # Install Ruby dependencies
           name: Bundle Install
-          command: bundle check --path vendor/bundle || bundle install --deployment
+          command: |
+            bundle config set path 'vendor/bundle'
+            bundle check || bundle install --deployment
 
       # Store bundle cache for Ruby dependencies
       - save_cache:

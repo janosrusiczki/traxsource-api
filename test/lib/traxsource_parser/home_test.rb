@@ -11,12 +11,12 @@ describe TraxsourceParser::Home do
     end
 
     it "creates an instance" do
-      @tp.must_be_instance_of TraxsourceParser::Home
+      _(@tp).must_be_instance_of TraxsourceParser::Home
     end
 
     describe :top10 do
       it "must contain 10 items" do
-        @tp.home[:top10].length.must_equal 10
+        _(@tp.home[:top10].length).must_equal 10
       end
     end
 end
