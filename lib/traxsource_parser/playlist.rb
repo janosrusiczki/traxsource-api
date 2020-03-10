@@ -12,7 +12,7 @@ module TraxsourceParser
     end
 
     def self.process_playlist(url)
-      doc = Nokogiri::XML(open(url))
+      doc = Nokogiri::XML(URI.open(url))
       dirty_json = doc.css('data').first.text
       json = dirty_json.gsub(/([a-z0-9_]+)\:\s/, '"\1": ')
       parsed = JSON.parse(json)
