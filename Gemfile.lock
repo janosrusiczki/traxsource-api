@@ -72,7 +72,7 @@ GEM
     hashdiff (1.0.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    listen (3.3.0)
+    listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.7.0)
@@ -169,7 +169,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   byebug
-  listen (~> 3.3.0)
+  listen (~> 3.3.3)
   minitest-ci
   minitest-hooks
   minitest-rails
