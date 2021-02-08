@@ -99,11 +99,11 @@ GEM
     mongoid (7.1.5)
       activemodel (>= 5.1, < 6.1)
       mongo (>= 2.7.0, < 3.0.0)
-    nio4r (2.5.4)
+    nio4r (2.5.5)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.6)
-    puma (5.0.4)
+    puma (5.2.1)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -174,7 +174,7 @@ DEPENDENCIES
   minitest-hooks
   minitest-rails
   mongoid
-  puma (~> 5.0)
+  puma (~> 5.2)
   rails (~> 6.0.3)
   spring
   spring-watcher-listen (~> 2.0.0)
